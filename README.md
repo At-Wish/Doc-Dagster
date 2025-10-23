@@ -1,14 +1,18 @@
-# Website
+# Dagster OSS Documentation
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+This website contains AtWish's documentation for Dagster OSS (Open Source Software). It is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
 
-### Installation
+## About
+
+This documentation site provides comprehensive guides and resources for using Dagster, the data orchestration platform for the modern data stack.
+
+## Installation
 
 ```
 $ yarn
 ```
 
-### Local Development
+## Local Development
 
 ```
 $ yarn start
@@ -16,7 +20,7 @@ $ yarn start
 
 This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
-### Build
+## Build
 
 ```
 $ yarn build
@@ -24,7 +28,7 @@ $ yarn build
 
 This command generates static content into the `build` directory and can be served using any static contents hosting service.
 
-### Deployment
+## Deployment
 
 Using SSH:
 
@@ -39,3 +43,9 @@ $ GIT_USER=<Your GitHub username> yarn deploy
 ```
 
 If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+
+## Links
+
+- [Dagster.io](https://dagster.io) - Official Dagster website
+- [Dagster GitHub](https://github.com/dagster-io/dagster) - Official Dagster repository
+- [AtWish.org](https://atwish.org) - AtWish organization
