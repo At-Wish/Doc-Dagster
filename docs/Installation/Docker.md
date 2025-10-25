@@ -4,6 +4,21 @@ sidebar_position: 1
 
 # Docker Installation
 
+:::tip Video Tutorial
+Watch the step-by-step Docker installation guide:
+:::
+
+<iframe
+  width="100%"
+  height="auto"
+  style={{aspectRatio: '16/9'}}
+  src="https://www.youtube.com/embed/ugGmohehxhE"
+  title="Dagster Docker Installation Tutorial"
+  frameBorder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowFullScreen>
+</iframe>
+
 Docker provides a convenient way to run Dagster in a containerized environment, ensuring consistency across different development and deployment environments.
 
 ## Prerequisites
