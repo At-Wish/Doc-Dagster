@@ -41,3 +41,16 @@ Unlike traditional workflow orchestration tools, Dagster is built specifically f
 - Integrate seamlessly with your existing data tools
 
 Remember, Dagster is all about making data pipeline development delightful and reliable. Happy orchestrating! 🚀
+
+## Getting Started
+
+Ready to start with Dagster? Here are the essential resources to get you up and running:
+
+### Installation Options
+
+- **[Docker Installation](/docs/Installation/Docker)** - Deploy Dagster using Docker containers for easy setup and consistency across environments
+
+### Quick Links
+
+- **GitHub Deployment Repository**: [At-Wish/code-dagster-deploy](https://github.com/At-Wish/code-dagster-deploy) - Ready-to-use Docker Compose setup for Dagster deployment
+- **Official Dagster Documentation**: [docs.dagster.io](https://docs.dagster.io) - Comprehensive guides and API references

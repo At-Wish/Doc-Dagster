@@ -28,27 +28,27 @@ const sidebars: SidebarsConfig = {
   //     label: "Quickstart",
   //     id: 'Quickstart'
   //   },
-  //   {
-  //     type: 'category',
-  //     label: 'Installation',
-  //     items: [
+    {
+      type: 'category',
+      label: 'Installation',
+      items: [
   //       {
   //         type: 'doc',
   //         label: "PiPy Installation",
   //         id: 'Installation/PiPy'
   //       },
-  //       {
-  //         type: 'doc',
-  //         label: "Docker Installation",
-  //         id: 'Installation/Docker'
-  //       },
+        {
+          type: 'doc',
+          label: "Docker Installation",
+          id: 'Installation/Docker'
+        },
   //       {
   //         type: 'doc',
   //         label: "Windows Installation",
   //         id: 'Installation/Windows'
   //       }
-  //     ],
-  //   },
+      ],
+    },
   //   {
   //     type: 'category',
   //     label: 'Configuration',
