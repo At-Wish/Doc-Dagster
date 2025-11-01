@@ -49,6 +49,17 @@ const sidebars: SidebarsConfig = {
   //       }
       ],
     },
+    {
+      type: 'category',
+      label: 'Code Deployment',
+      items: [
+        {
+          type: 'doc',
+          label: "GRPC Deployment",
+          id: 'CodeDeployment/GRPC-Deployment'
+        },
+      ],
+    },
   //   {
   //     type: 'category',
   //     label: 'Configuration',

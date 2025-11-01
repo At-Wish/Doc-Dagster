@@ -1,0 +1,63 @@
+# gRPC Project deployment with Docker
+
+One of the best ways to deploy Dagster projects is with gRPC. You can separate out containers and use the same network. Each project can be its own container, and using separate docker compose files you can deploy projects individually. This means when changes are made, you can simply redeploy the specific project and it will pick up the changes without having to deploy the entire stack.
+
+:::note Note
+For Kubernetes, the concept will be exactly the same.
+:::
+
+To deploy code, I have created a hello world project. The link to the project's GitHub repository is: [code-dagster-project-hello-world](https://github.com/At-Wish/code-dagster-project-hello-world)
+
+## Prerequisites
+
+1. We need to have the project running and tested before we deploy. I will skip this part and we will deep dive into educational tutorials for a separate series. For now, I will be using this hello world project as it is.
+
+2. Another prerequisite for this project is that your Docker container of Dagster is running and you are able to see the Dagster project. Also, in Docker we will need `workspace.yaml` mounted to docker compose instead of copied into it, so that we can edit it without having to restart the container. This will help to run multiple projects and adding new projects will not take much effort.
+
+3. We also need to make sure that the Dagster main container is set up with a network, as we need to use the same network. Otherwise, port issues may occur as we cannot just expose all projects to port 4000.
+
+## Deployment Steps
+
+1. Clone this project to the same compute instance where your Dagster container is running:
+   ```
+   git clone https://github.com/At-Wish/code-dagster-project-hello-world
+   cd code-dagster-project-hello-world
+   ```
+
+2. Create a `.env` file with `NETWORK_NAME=docker_example_network` (replace `docker_example_network` with your actual network name).
+
+3. Run `docker compose up -d`:
+   ```
+   docker compose up -d
+   ```
+
+This will create a container for your project, and since it is running on the same network, we don't need to expose any port outside.
+
+## Configuring workspace.yaml
+
+Now it's time to configure `workspace.yaml` to include this project's container. Add the following to your `workspace.yaml`. If you already have something from a local container, do not replace it - just add the following inside `load_from`:
+
+```yaml
+load_from:
+  - grpc_server:
+      host: dagster-hello-world
+      port: 4000
+      location_name: dagster_project_sample
+```
+
+After adding this configuration, the Dagster UI should automatically detect the new project container on the same network.
+
+## Verification
+
+After completing the steps above, you should be able to see your project in the Dagster UI at `http://localhost:3000` (or your configured port). The new project container should appear in the workspace. In Deployment click on reload to make sure all deployments are loaded properly.
+
+## Next Steps
+
+Now that your gRPC project is deployed, you can:
+
+- Monitor your project assets and jobs in the Dagster UI
+- Add more projects using the same approach
+- Scale individual projects independently as needed
+- Update and redeploy specific projects without affecting others
+
+
